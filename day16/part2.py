@@ -14,7 +14,7 @@ def dragon(seed, limit):
 
 def chksum(data):
     c = data
-    buf = range((len(c) / 2) + 1)
+    buf = bytearray(' '* ((len(c) /2)  + 1))
     while (len(c) % 2) == 0:
         data = c
         i = 0
@@ -23,7 +23,7 @@ def chksum(data):
             buf[j] = '1' if data[i] == data[i + 1] else '0'
             i += 2
             j += 1
-        c = ''.join(buf[:j])
+        c = str(buf[:j])
 
     return c
 
